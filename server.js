@@ -2,7 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const allowedOrigins = [
+  'http://localhost:4200',
+  'https://seu-frontend-url.vercel.app' // Será preenchido depois
+];
 
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 const app = express();
 
 // Middleware
