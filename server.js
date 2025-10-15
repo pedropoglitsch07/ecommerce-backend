@@ -7,7 +7,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:4200',
-  'https://seu-frontend-url.vercel.app'
+  'https://ecommerce-frontend-six-beta-30.vercel.app'
 ];
 
 app.use(cors({
