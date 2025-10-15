@@ -2,19 +2,23 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+
+// PRIMEIRO: Criar o app
+const app = express();
+
+// DEPOIS: Definir origens permitidas
 const allowedOrigins = [
   'http://localhost:4200',
   'https://seu-frontend-url.vercel.app' // Será preenchido depois
 ];
 
+// Middleware CORS configurado
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
 }));
-const app = express();
 
-// Middleware
-app.use(cors());
+// Middleware para JSON
 app.use(express.json());
 
 // Conexão MongoDB
